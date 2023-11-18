@@ -1,24 +1,17 @@
-/*!
- *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
- */
-
 @font-face {
-  font-family: "FontAwesome";
-  src: url("../fonts/fontawesome-webfont.eot?v=4.6.3");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3")
-      format("embedded-opentype"),
-    url("../fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"),
-    url("../fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"),
-    url("../fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"),
-    url("../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular")
-      format("svg");
+  font-family: "SupplyCenter";
+  src: url("OFSWebPage\assets\fonts\SupplyCenter.eot");
+  src: url("OFSWebPage\assets\fonts\SupplyCenter.eot?#iefix") format("embedded-opentype"),
+    url("OFSWebPage\assets\fonts\SupplyCenter.woff2") format("woff2"),
+    url("OFSWebPage\assets\fonts\SupplyCenter.woff") format("woff"),
+    url("OFSWebPage\assets\fonts\SupplyCenter.ttf") format("truetype"),
+    url("OFSWebPage\assets\fonts\SupplyCenter.svg#SupplyCenter") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px/1 SupplyCenter;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -2041,7 +2034,7 @@
 .fa-modx:before {
   content: "\f285";
 }
-.fa-fort-awesome:before {
+.fa-fort:before {
   content: "\f286";
 }
 .fa-usb:before {
@@ -2176,7 +2169,7 @@
   content: "\f2b3";
 }
 .fa-fa:before,
-.fa-font-awesome:before {
+.fa-font:before {
   content: "\f2b4";
 }
 .sr-only {
