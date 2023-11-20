@@ -3368,6 +3368,7 @@
 				font-weight: normal;
 				text-decoration: none;
 				font-family: 'Supply Center', sans-serif;
+				text-shadow: 2px 2px 4px #08f; /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
 			}
 
 				#header .logo a:hover {
