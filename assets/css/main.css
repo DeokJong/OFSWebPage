@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Gasoek+One|Gasoek+One:300,400,600,700,800");
+@import url(HS-Regular.css);
+@import url('http://fonts.googleapis.com/earlyaccess/hanna.css:300,400,600,700,800');
 @import url(SupplyCenter.css);
 
 /*
@@ -11,7 +12,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, header, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -19,7 +20,11 @@
 		font: inherit;
 		vertical-align: baseline;
 	}
-.image.fit img {
+.highlight{
+	color: #08f;
+	font-size: 30px;
+}
+.fit img {
 	width: 100%;
 	height: auto;
 }
@@ -1622,9 +1627,9 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "SupplyCenter";
+		font-family: 'HS-Regular', sans-serif;
 		font-size: 13pt;
-		font-weight: 300;
+		font-weight: normal;
 		line-height: 1.65;
 	}
 
@@ -1789,7 +1794,7 @@
 	}
 
 	a {
-		color: #F64747;
+		color: #08f;
 	}
 
 	strong, b {
@@ -2031,7 +2036,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #F64747;
+			background-color: #08f;
 			color: #ffffff !important;
 		}
 
@@ -2417,8 +2422,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #F64747;
-			box-shadow: 0 0 0 1px #F64747;
+			border-color: #08f;
+			box-shadow: 0 0 0 1px #08f;
 		}
 
 	.select-wrapper:before {
@@ -2438,15 +2443,15 @@
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #F64747;
-		border-color: #F64747;
+		background-color: #08f;
+		border-color: #08f;
 		color: #ffffff;
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #F64747;
-		box-shadow: 0 0 0 1px #F64747;
+		border-color: #08f;
+		box-shadow: 0 0 0 1px #08f;
 	}
 
 	::-webkit-input-placeholder {
@@ -2848,7 +2853,7 @@
 	}
 
 		.wrapper.style1 {
-			background-color: #F64747;
+			background-color: #08f;
 			color: #fdd1d1;
 		}
 
@@ -2937,7 +2942,7 @@
 					.wrapper.style1 input[type="button"].alt.icon:before,
 					.wrapper.style1 button.alt.icon:before,
 					.wrapper.style1 .button.alt.icon:before {
-						color: #fbb5b5;
+						color: rgb(177, 218, 254);
 					}
 
 				.wrapper.style1 input[type="submit"].special,
@@ -2946,7 +2951,7 @@
 				.wrapper.style1 button.special,
 				.wrapper.style1 .button.special {
 					background-color: #ffffff;
-					color: #F64747 !important;
+					color: #08f !important;
 				}
 
 			.wrapper.style1 label {
@@ -2990,7 +2995,7 @@
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background-color: #ffffff;
 				border-color: #ffffff;
-				color: #F64747;
+				color: #08f;
 			}
 
 			.wrapper.style1 input[type="checkbox"]:focus + label:before,
@@ -3024,7 +3029,7 @@
 			}
 
 			.wrapper.style1 header p {
-				color: #fbb5b5;
+				color: rgb(142, 202, 255);
 			}
 
 			.wrapper.style1 table tbody tr {
@@ -3061,7 +3066,7 @@
 			}
 
 			.wrapper.style2 a {
-				color: #F64747;
+				color: #08f;
 			}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
@@ -3133,7 +3138,7 @@
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #F64747;
+					background-color: #08f;
 					color: #ffffff !important;
 				}
 
@@ -3142,7 +3147,7 @@
 					.wrapper.style2 input[type="button"].special:hover,
 					.wrapper.style2 button.special:hover,
 					.wrapper.style2 .button.special:hover {
-						background-color: #f75f5f;
+						background-color: #08f;
 					}
 
 					.wrapper.style2 input[type="submit"].special:active,
@@ -3150,7 +3155,7 @@
 					.wrapper.style2 input[type="button"].special:active,
 					.wrapper.style2 button.special:active,
 					.wrapper.style2 .button.special:active {
-						background-color: #f52f2f;
+						background-color: #08f;
 					}
 
 			.wrapper.style2 label {
@@ -3171,8 +3176,8 @@
 				.wrapper.style2 input[type="email"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #F64747;
-					box-shadow: 0 0 0 1px #F64747;
+					border-color: #08f;
+					box-shadow: 0 0 0 1px #08f;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -3192,15 +3197,15 @@
 
 			.wrapper.style2 input[type="checkbox"]:checked + label:before,
 			.wrapper.style2 input[type="radio"]:checked + label:before {
-				background-color: #F64747;
-				border-color: #F64747;
+				background-color: #08f;
+				border-color: #08f;
 				color: #ffffff;
 			}
 
 			.wrapper.style2 input[type="checkbox"]:focus + label:before,
 			.wrapper.style2 input[type="radio"]:focus + label:before {
-				border-color: #F64747;
-				box-shadow: 0 0 0 1px #F64747;
+				border-color: #08f;
+				box-shadow: 0 0 0 1px #08f;
 			}
 
 			.wrapper.style2 ::-webkit-input-placeholder {
@@ -3327,7 +3332,7 @@
 
 	#header {
 		background-color: transparent;
-		color: #fdd1d1;
+		color: rgb(143, 203, 255);
 		cursor: default;
 		height: 3.25em;
 		left: 0;
@@ -3340,9 +3345,10 @@
 		padding: 0 1.5em;
 	}
 
-		#header.alt {
+		#header.alt { /* 헤더 색깔 */
 			top: 0;
 			background: #000000;
+			background: rgb(105, 105, 105);
 		}
 
 		#header .logo {
@@ -3356,11 +3362,12 @@
 			top: 0;
 		}
 
-			#header .logo a {
-				font-size: 1.25em;
+			#header .logo a { /* 헤더의 로고 크기 색깔*/
+				font-size: 30px;
 				color: #fff;
-				font-weight: 600;
+				font-weight: normal;
 				text-decoration: none;
+				font-family: 'Supply Center', sans-serif;
 			}
 
 				#header .logo a:hover {
@@ -3471,11 +3478,8 @@
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-<<<<<<< HEAD
 		background: rgb(0, 34, 64);
-=======
 		background: rgba(0, 0, 0, 0.7);
->>>>>>> refs/remotes/origin/main
 		box-shadow: none;
 		color: #08f;
 		height: 100%;
@@ -3488,7 +3492,7 @@
 		visibility: hidden;
 		width: 20em;
 		z-index: 10002;
-		font-family: SupplyCenter;
+		font-family: 'Supply Center', sans-serif;
 	}
 
 		#menu > ul {
@@ -3636,7 +3640,7 @@
 		#banner h1 {
 			font-size: 7em;
 			line-height: 1.1;
-			font-family: "Lobster", cursive;
+			font-family: 'Supply Center', sans-serif;
 			margin-bottom: .25em;
 			color: rgba(255, 255, 255, 0.75);
 			text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.125);
