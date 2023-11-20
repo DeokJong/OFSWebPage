@@ -1821,6 +1821,7 @@
 /* Box */
 
 	.box {
+		margin-top: 2em;
 		background: rgba(0, 0, 0, 0.5);
 		border-radius: 4px;
 		margin-bottom: 2em;
@@ -2246,7 +2247,7 @@
 		display: block;
 		font-size: 0.9em;
 		font-weight: 300;
-		margin: 0 0 1em 0;
+		margin: 0 0 0 0;
 	}
 
 	input[type="text"],
@@ -3279,7 +3280,7 @@
 /* Header */
 
 	body.subpage {
-		padding-top: 3.125em;
+		padding-top: 0;
 	}
 
 	@-moz-keyframes reveal-header {
@@ -3329,9 +3330,8 @@
 			opacity: 1;
 		}
 	}
-
 	#header {
-		background-color: transparent;
+		background-color: none;
 		color: rgb(143, 203, 255);
 		cursor: default;
 		height: 3.25em;
@@ -3346,9 +3346,8 @@
 	}
 
 		#header.alt { /* 헤더 색깔 */
-			top: 0;
-			background: #000000;
-			background: rgb(105, 105, 105);
+			top: 5;
+			background: rgb(105, 105, 105, 0);
 		}
 
 		#header .logo {
@@ -3438,7 +3437,7 @@
 	@media screen and (max-width: 980px) {
 
 		body.subpage {
-			padding-top: 50px;
+			padding-top: 0;
 		}
 
 		#header {
@@ -3821,6 +3820,7 @@
 		body.is-loading #banner:before {
 			opacity: 1;
 		}
+
 
 /* Banner */
 

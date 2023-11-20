@@ -26,5 +26,5 @@
 .fontSizeHeader{
     font-family: 'HS-Regular', sans-serif;
     font-size: 20px; /* 원하는 폰트 크기로 설정 */
-
+    line-height: 1.5;
 }
