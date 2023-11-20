@@ -3368,7 +3368,7 @@
 				font-weight: normal;
 				text-decoration: none;
 				font-family: 'Supply Center', sans-serif;
-				text-shadow: 2px 2px 4px #08f; /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
+				text-shadow: 2px 2px 2px #08f; /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
 			}
 
 				#header .logo a:hover {
@@ -3482,6 +3482,8 @@
 		background: rgb(0, 34, 64);
 		background: rgba(0, 0, 0, 0.7);
 		box-shadow: none;
+		/*
+		text-shadow: 0.5px 0.5px 1px rgb(255, 255, 255); /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
 		color: #08f;
 		height: 100%;
 		max-width: 80%;
