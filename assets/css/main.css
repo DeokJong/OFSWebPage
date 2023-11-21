@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Lobster|Open+Sans:300,400,600,700,800");
+@import url(HS-Regular.css);
+@import url('http://fonts.googleapis.com/earlyaccess/hanna.css:300,400,600,700,800');
+@import url(SupplyCenter.css);
 
 /*
 	Road Trip by TEMPLATED
@@ -10,7 +12,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, header, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -18,7 +20,11 @@
 		font: inherit;
 		vertical-align: baseline;
 	}
-.image.fit img {
+.highlight{
+	color: #08f;
+	font-size: 30px;
+}
+.fit img {
 	width: 100%;
 	height: auto;
 }
@@ -1621,9 +1627,9 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Open Sans", Arial, Helvetica, sans-serif;
+		font-family: 'HS-Regular', sans-serif;
 		font-size: 13pt;
-		font-weight: 300;
+		font-weight: normal;
 		line-height: 1.65;
 	}
 
@@ -1788,7 +1794,7 @@
 	}
 
 	a {
-		color: #F64747;
+		color: #08f;
 	}
 
 	strong, b {
@@ -2030,7 +2036,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #F64747;
+			background-color: #08f;
 			color: #ffffff !important;
 		}
 
@@ -2416,8 +2422,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #F64747;
-			box-shadow: 0 0 0 1px #F64747;
+			border-color: #08f;
+			box-shadow: 0 0 0 1px #08f;
 		}
 
 	.select-wrapper:before {
@@ -2437,15 +2443,15 @@
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #F64747;
-		border-color: #F64747;
+		background-color: #08f;
+		border-color: #08f;
 		color: #ffffff;
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #F64747;
-		box-shadow: 0 0 0 1px #F64747;
+		border-color: #08f;
+		box-shadow: 0 0 0 1px #08f;
 	}
 
 	::-webkit-input-placeholder {
@@ -2847,7 +2853,7 @@
 	}
 
 		.wrapper.style1 {
-			background-color: #F64747;
+			background-color: #08f;
 			color: #fdd1d1;
 		}
 
@@ -2936,7 +2942,7 @@
 					.wrapper.style1 input[type="button"].alt.icon:before,
 					.wrapper.style1 button.alt.icon:before,
 					.wrapper.style1 .button.alt.icon:before {
-						color: #fbb5b5;
+						color: rgb(177, 218, 254);
 					}
 
 				.wrapper.style1 input[type="submit"].special,
@@ -2945,7 +2951,7 @@
 				.wrapper.style1 button.special,
 				.wrapper.style1 .button.special {
 					background-color: #ffffff;
-					color: #F64747 !important;
+					color: #08f !important;
 				}
 
 			.wrapper.style1 label {
@@ -2989,7 +2995,7 @@
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background-color: #ffffff;
 				border-color: #ffffff;
-				color: #F64747;
+				color: #08f;
 			}
 
 			.wrapper.style1 input[type="checkbox"]:focus + label:before,
@@ -3023,7 +3029,7 @@
 			}
 
 			.wrapper.style1 header p {
-				color: #fbb5b5;
+				color: rgb(142, 202, 255);
 			}
 
 			.wrapper.style1 table tbody tr {
@@ -3060,7 +3066,7 @@
 			}
 
 			.wrapper.style2 a {
-				color: #F64747;
+				color: #08f;
 			}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
@@ -3132,7 +3138,7 @@
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #F64747;
+					background-color: #08f;
 					color: #ffffff !important;
 				}
 
@@ -3141,7 +3147,7 @@
 					.wrapper.style2 input[type="button"].special:hover,
 					.wrapper.style2 button.special:hover,
 					.wrapper.style2 .button.special:hover {
-						background-color: #f75f5f;
+						background-color: #08f;
 					}
 
 					.wrapper.style2 input[type="submit"].special:active,
@@ -3149,7 +3155,7 @@
 					.wrapper.style2 input[type="button"].special:active,
 					.wrapper.style2 button.special:active,
 					.wrapper.style2 .button.special:active {
-						background-color: #f52f2f;
+						background-color: #08f;
 					}
 
 			.wrapper.style2 label {
@@ -3170,8 +3176,8 @@
 				.wrapper.style2 input[type="email"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #F64747;
-					box-shadow: 0 0 0 1px #F64747;
+					border-color: #08f;
+					box-shadow: 0 0 0 1px #08f;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -3191,15 +3197,15 @@
 
 			.wrapper.style2 input[type="checkbox"]:checked + label:before,
 			.wrapper.style2 input[type="radio"]:checked + label:before {
-				background-color: #F64747;
-				border-color: #F64747;
+				background-color: #08f;
+				border-color: #08f;
 				color: #ffffff;
 			}
 
 			.wrapper.style2 input[type="checkbox"]:focus + label:before,
 			.wrapper.style2 input[type="radio"]:focus + label:before {
-				border-color: #F64747;
-				box-shadow: 0 0 0 1px #F64747;
+				border-color: #08f;
+				box-shadow: 0 0 0 1px #08f;
 			}
 
 			.wrapper.style2 ::-webkit-input-placeholder {
@@ -3326,7 +3332,7 @@
 
 	#header {
 		background-color: transparent;
-		color: #fdd1d1;
+		color: rgb(143, 203, 255);
 		cursor: default;
 		height: 3.25em;
 		left: 0;
@@ -3339,9 +3345,10 @@
 		padding: 0 1.5em;
 	}
 
-		#header.alt {
+		#header.alt { /* 헤더 색깔 */
 			top: 0;
-			background: #F64747;
+			background: #000000;
+			background: rgb(105, 105, 105);
 		}
 
 		#header .logo {
@@ -3355,11 +3362,13 @@
 			top: 0;
 		}
 
-			#header .logo a {
-				font-size: 1.25em;
+			#header .logo a { /* 헤더의 로고 크기 색깔*/
+				font-size: 30px;
 				color: #fff;
-				font-weight: 600;
+				font-weight: normal;
 				text-decoration: none;
+				font-family: 'Supply Center', sans-serif;
+				text-shadow: 2px 2px 2px #08f; /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
 			}
 
 				#header .logo a:hover {
@@ -3470,9 +3479,12 @@
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #f64242;
+		background: rgb(0, 34, 64);
+		background: rgba(0, 0, 0, 0.7);
 		box-shadow: none;
-		color: #ffffff;
+		/*
+		text-shadow: 0.5px 0.5px 1px rgb(255, 255, 255); /* x축 오프셋, y축 오프셋, 흐림 반경, 색상 */
+		color: #08f;
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -3483,6 +3495,7 @@
 		visibility: hidden;
 		width: 20em;
 		z-index: 10002;
+		font-family: 'Supply Center', sans-serif;
 	}
 
 		#menu > ul {
@@ -3524,7 +3537,7 @@
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: transparent;
 			border: 0;
-			color: #fbb5b5;
+			color: #ffffff;
 			cursor: pointer;
 			display: block;
 			height: 3.25em;
@@ -3630,7 +3643,7 @@
 		#banner h1 {
 			font-size: 7em;
 			line-height: 1.1;
-			font-family: "Lobster", cursive;
+			font-family: 'Supply Center', sans-serif;
 			margin-bottom: .25em;
 			color: rgba(255, 255, 255, 0.75);
 			text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.125);
@@ -3752,7 +3765,7 @@
 			background-color: #000;
 			height: 100%;
 			left: 0;
-			opacity: 0.45;
+			opacity: 0;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -4182,10 +4195,10 @@
 /* Footer */
 
 	#footer {
-		background-color: #F64747;
+		background-color: #08f;
 		color: #fdd1d1;
 		padding: 6em 0 4em 0;
-		background: #F64747;
+		background: rgb(72, 72, 72);
 	}
 
 		#footer input, #footer select, #footer textarea {
@@ -4273,7 +4286,7 @@
 				#footer input[type="button"].alt.icon:before,
 				#footer button.alt.icon:before,
 				#footer .button.alt.icon:before {
-					color: #fbb5b5;
+					color: #ffffff;
 				}
 
 			#footer input[type="submit"].special,
@@ -4282,7 +4295,7 @@
 			#footer button.special,
 			#footer .button.special {
 				background-color: #ffffff;
-				color: #F64747 !important;
+				color: #ffffff !important;
 			}
 
 		#footer label {
@@ -4303,8 +4316,8 @@
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
-				border-color: #ffffff;
-				box-shadow: 0 0 0 1px #ffffff;
+				border-color: rgba(255, 255, 255, 0.25);
+				box-shadow: 0 0 0 1px #5eb4ff;
 			}
 
 		#footer .select-wrapper:before {
@@ -4326,7 +4339,7 @@
 		#footer input[type="radio"]:checked + label:before {
 			background-color: #ffffff;
 			border-color: #ffffff;
-			color: #F64747;
+			color: #ffffff;
 		}
 
 		#footer input[type="checkbox"]:focus + label:before,
@@ -4336,23 +4349,23 @@
 		}
 
 		#footer ::-webkit-input-placeholder {
-			color: #fbb5b5 !important;
+			color: #ffffff !important;
 		}
 
 		#footer :-moz-placeholder {
-			color: #fbb5b5 !important;
+			color: #ffffff !important;
 		}
 
 		#footer ::-moz-placeholder {
-			color: #fbb5b5 !important;
+			color: #ffffff !important;
 		}
 
 		#footer :-ms-input-placeholder {
-			color: #fbb5b5 !important;
+			color: #ffffff !important;
 		}
 
 		#footer .formerize-placeholder {
-			color: #fbb5b5 !important;
+			color: #ffffff !important;
 		}
 
 		#footer ul.alt li {
@@ -4360,7 +4373,7 @@
 		}
 
 		#footer header p {
-			color: #fbb5b5;
+			color: #ffffff;
 		}
 
 		#footer table tbody tr {

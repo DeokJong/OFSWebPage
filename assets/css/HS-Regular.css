@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.fontSizeBig{
+    font-family: 'HS-Regular', sans-serif;
+    font-size: 30px; /* 원하는 폰트 크기로 설정 */
+    line-height: 1.2;
+}
+.fontSizeSmall{
+    font-family: 'HS-Regular', sans-serif;
+    font-size: 22px; /* 원하는 폰트 크기로 설정 */
+    line-height: 1.2;
+}
+.fontSizeCopyright{
+    font-family: 'HS-Regular', sans-serif;
+    text-decoration: none;
+    font-size: 22px; /* 원하는 폰트 크기로 설정 */
+    height: 30px;
+    line-height: 1.5;
+    text-align: center;
+
+}
+.fontSizeHeader{
+    font-family: 'HS-Regular', sans-serif;
+    font-size: 20px; /* 원하는 폰트 크기로 설정 */
+
+}
