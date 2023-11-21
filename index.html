@@ -3,8 +3,120 @@
 	Road Trip by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html><head><title>JAVICE 자비스</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body>
+--><html>
+	<head>
+		<title>JAVICE 자비스</title>
+		<meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css">
+		<!-- Add slick CSS and JS files -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<style>
+			.slider-container {
+        overflow: hidden;
+        position: relative;
+      }
+			.flex-container {
+				display: flex;
+				justify-content: space-around; /* 카드 사이의 간격 조절을 위한 정렬 설정 */
+				flex-wrap: wrap; /* 카드가 너무 많아 화면을 벗어날 경우 다음 줄로 넘어가도록 설정 */
+			}
 
+			.flex-container-project {
+				display: flex;
+				transition: transform 0.5s ease;
+				width: 100%;
+				margin: 0 auto; /* 중앙 정렬을 위해 추가 */
+			}
+
+			.card-awards {
+				width: 30%; /* 가로로 나열되는 카드의 너비 조절 */
+				padding: 20px;
+				margin: 10px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				text-align: center;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.card-awards:hover {
+				cursor: pointer; /* 마우스 오버시 포인터 모양 변경 */
+			}
+
+			.card-awards h3 {
+				font-size: 1.5em;
+			}
+
+			.card-awards p {
+				margin-top: 10px;
+			}
+
+			.card {
+        flex: 0 0 auto;
+        width: 30%;
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card:hover {
+        cursor: pointer;
+      }
+
+      .card h3 {
+        font-size: 1.5em;
+      }
+
+      .card p {
+        margin-top: 10px;
+      }
+
+      .indicator-container {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+      }
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #aaa;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .indicator.active {
+        background-color: #333;
+      }
+
+      .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: none;
+      }
+
+      .arrow-button.left {
+        left: 10px;
+      }
+
+      .arrow-button.right {
+        right: 10px;
+      }
+		</style>
+	</head>
+	<body>
 		<!-- Header -->
 			<header class="fontSizeBig" id="header"><div class="logo"><a href="index.html">JAVICE</a></div>
 				<a href="#menu"><span>Menu</span></a>
@@ -29,20 +141,99 @@
 						</footer></article></div>
 				<a href="#two" class="more">Learn More</a>
 			</section><!-- Two --><section id="two" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner">
-					<article class="box"><header><h2>Mus elit a ultricies at</h2>
-							<p>12.21.2016</p>
-						</header><div class="fontSizeSmall" >
-							<p >class="some-class"Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
+					<article class="box"><header><h2>수상경력</h2><p>12.21.2016</p></header>
+						<div class="flex-container" >
+							<div class="card-awards" onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">				
+								<h3>수상 제목 1</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
+							<div class="card-awards">
+								<h3>수상 제목 2</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
+							<div class="card-awards">
+								<h3>수상 제목 3</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
+							<div class="card-awards">
+								<h3>수상 제목 4</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
+							<div class="card-awards">
+								<h3>수상 제목 5</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
+							<div class="card-awards">
+								<h3>수상 제목 6</h3>
+								<p>설명이나 날짜 등</p>
+							</div>
 						</div>
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
 				<a href="#three" class="more">Learn More</a>
 			</section><!-- Three --><section id="three" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner">
-					<article class="box"><header><h2>Varius a cursus aliquet</h2>
+					<article class="box"><header><h2>PROJECT</h2>
 							<p>11.11.2016</p>
-						</header><div class="fontSizeSmall" >
-							<p class="some-class">Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
-						</div>
+						</header>
+						<div class="slider-container">
+							<div class="flex-container-project">
+							  <!-- 여러 개의 카드 추가 -->
+					  
+							  <div class="card">
+								<h3>CARD 1</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 2</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 3</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 4</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 5</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 6</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 7</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 8</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 9</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 10</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 11</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 12</h3>
+								<p>abcdefg</p>
+							  </div>
+							</div>
+					  
+							<div class="indicator-container"></div>
+					  
+							<button class="arrow-button left" onclick="prevPage()">❮</button>
+							<button class="arrow-button right" onclick="nextPage()">❯</button>
+						  </div>
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
 				<a href="#four" class="more">Learn More</a>
@@ -88,4 +279,60 @@
 			Copyright @ <a href="https://csai.jbnu.ac.kr/csai/29028/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGY3NhaSUyRjc5MSUyRjY4MjYlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D">JAVICE</a>
 		</div>
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function redirectToURL(url) {
+			 	window.location.href = url;
+			}
+		</script>
+		<script>
+			const container = document.querySelector(".flex-container-project");
+			const indicatorContainer = document.querySelector(".indicator-container");
+			let pageIndex = 0;
+		  
+			function showPage() {
+			  const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
+			  container.style.transform = `translateX(${-pageIndex * cardWidth * 3}px)`; // 페이지당 3개의 카드
+		  
+			  // Update indicators
+			  const indicators = document.querySelectorAll(".indicator");
+			  indicators.forEach((indicator, index) => {
+				indicator.classList.toggle("active", index === pageIndex); // 수정된 부분
+			  });
+			}
+		  
+			function nextPage() {
+			  pageIndex = (pageIndex + 1) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
+			  showPage();
+			}
+		  
+			function prevPage() {
+			  pageIndex = (pageIndex - 1 + Math.ceil(document.querySelectorAll(".card").length / 3)) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
+			  showPage();
+			}
+		  
+			// Create indicators
+			const totalCards = document.querySelectorAll(".card").length;
+			const totalPages = Math.ceil(totalCards / 3);
+			for (let i = 0; i < totalPages; i++) {
+			  const indicator = document.createElement("div");
+			  indicator.classList.add("indicator");
+			  indicatorContainer.appendChild(indicator);
+		  
+			  indicator.addEventListener("click", () => {
+				pageIndex = i;
+				showPage();
+			  });
+			}
+		  
+			showPage();
+		  </script>
+		  
+		
+	</body>
+</html>
