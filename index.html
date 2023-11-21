@@ -12,110 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<style>
-			.slider-container {
-        overflow: hidden;
-        position: relative;
-      }
-			.flex-container {
-				display: flex;
-				justify-content: space-around; /* 카드 사이의 간격 조절을 위한 정렬 설정 */
-				flex-wrap: wrap; /* 카드가 너무 많아 화면을 벗어날 경우 다음 줄로 넘어가도록 설정 */
-			}
-
-			.flex-container-project {
-				display: flex;
-				transition: transform 0.5s ease;
-				width: 100%;
-				margin: 0 auto; /* 중앙 정렬을 위해 추가 */
-			}
-
-			.card-awards {
-				width: 30%; /* 가로로 나열되는 카드의 너비 조절 */
-				padding: 20px;
-				margin: 10px;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-				text-align: center;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			}
-
-			.card-awards:hover {
-				cursor: pointer; /* 마우스 오버시 포인터 모양 변경 */
-			}
-
-			.card-awards h3 {
-				font-size: 1.5em;
-			}
-
-			.card-awards p {
-				margin-top: 10px;
-			}
-
-			.card {
-        flex: 0 0 auto;
-        width: 385px;
-		height: 250px;
-        margin: 10px;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .card:hover {
-        cursor: pointer;
-      }
-
-      .card h3 {
-        font-size: 1.5em;
-      }
-
-      .card p {
-        margin-top: 10px;
-      }
-
-      .indicator-container {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-      }
-
-      .indicator {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #aaa;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-
-      .indicator.active {
-        background-color: #333;
-      }
-
-      .arrow-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5em;
-        cursor: pointer;
-        color: #333;
-        background: none;
-        border: none;
-      }
-
-      .arrow-button.left {
-        left: 10px;
-      }
-
-      .arrow-button.right {
-        right: 10px;
-      }
-		</style>
 	</head>
 	<body>
 		<!-- Header -->
@@ -142,63 +38,62 @@
 						</footer></article></div>
 				<a href="#two" class="more">Learn More</a>
 			</section><!-- Two --><section id="two" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner">
-					<article class="box"><header><h2>수상경력</h2><p>12.21.2016</p></header>
+					<article class="box"><header><h2>수상경력</h2><p>2023</p></header>
 						<div class="flex-container" >
-							<div class="card-awards" onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">				
-								<h3>수상 제목 1</h3>
-								<p>설명이나 날짜 등</p>
+							<div class="card-awards" onclick="redirectToURL('https://it.jbnu.ac.kr/it/9841/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGaXQlMkYxNDYyJTJGMjUzNzgyJTJGYXJ0Y2xWaWV3LmRvJTNG')">				
+								<img src="images\jihu.jpg" alt="지후 해커톤" width=385px height=250px>
+							</div>
+							<div class="card-awards"onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">
+								<img src="images\oasis2.jpg" alt="태윤 해커톤" width=385px height=250px>
+							</div>
+							<div class="card-awards"onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">
+								<img src="images\oasis1.jpg" alt="하린 해커톤" width=385px height=250px>
+							</div>
+							<div class="card-awards fontSizsSmall">
+								<h3>김지후</h3>
+								<p>2023 전주 ICT 이노베이션<br>스퀘어 코딩대회 최우수상</p>
 							</div>
 							<div class="card-awards">
-								<h3>수상 제목 2</h3>
-								<p>설명이나 날짜 등</p>
+								<h3>안태윤</h3>
+								<p>제 4회 오아시스 해커톤<br>최우수상</p>
 							</div>
 							<div class="card-awards">
-								<h3>수상 제목 3</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card-awards">
-								<h3>수상 제목 4</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card-awards">
-								<h3>수상 제목 5</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card-awards">
-								<h3>수상 제목 6</h3>
-								<p>설명이나 날짜 등</p>
+								<h3>전하린</h3>
+								<p>제 4회 오아시스 해커톤<br>우수상</p>
 							</div>
 						</div>
+						<!--
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
+					-->
 				<a href="#three" class="more">Learn More</a>
 			</section><!-- Three --><section id="three" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner" style="width: 80%;">
-					<header><h2>PROJECT</h2>
-							<p>11.11.2016</p>
+					<header><h2>ACTIVITY</h2>
+							<p>2023.03 ~</p>
 						</header>
 						<div class="slider-container">
 							<div class="flex-container-project">
 							  <!-- 여러 개의 카드 추가 -->
 					  
 							  <div class="card">
-								<h3>CARD 1</h3>
-								<p>abcdefg</p>
+								<h3>2023.03.16. 첫 회의</h3>
+								<img src="images\first.jpg" alt="첫 회의" width=345px height=200px>
 							  </div>
 							  <div class="card">
-								<h3>CARD 2</h3>
-								<p>abcdefg</p>
+								<h3>2023.03.16. 첫 회식</h3>
+								<img src="images\firstmeeting.jpg" alt="첫 회식" width=345px height=200px>
 							  </div>
 							  <div class="card">
-								<h3>CARD 3</h3>
-								<p>abcdefg</p>
+								<h3>2023.11.11. 첫 단체 회식</h3>
+								<img src="images\meeting.jpg" alt="첫 단체 회식" width=345px height=200px>
 							  </div>
 							  <div class="card">
-								<h3>CARD 4</h3>
-								<p>abcdefg</p>
+								<h3>2023.11. 롤드컵 관람</h3>
+								<img src="images\lol.jpg" alt="롤드컵 관람" width=345px height=200px>
 							  </div>
 							  <div class="card">
-								<h3>CARD 5</h3>
-								<p>abcdefg</p>
+								<h3>동아리방 정비사업</h3>
+								<img src="images\clubhouse.jpg" alt="롤드컵 관람" width=345px height=200px>
 							  </div>
 							  <div class="card">
 								<h3>CARD 6</h3>
@@ -234,17 +129,19 @@
 					  
 							<button class="arrow-button left" onclick="prevPage()">❮</button>
 							<button class="arrow-button right" onclick="nextPage()">❯</button>
-						  </div>
-						<footer><a href="generic.html" class="button alt">Learn More</a>
-						</footer></div>
+						  	<!-- </div>
+					 <footer><a href="generic.html" class="button alt">Learn More</a>
+						</footer> </div>-->
 				<a href="#four" class="more">Learn More</a>
-			</section><!-- Four --><section id="four" class="wrapper post bg-img" data-bg="gray.png"><div class="inner">
-					<article class="box"><header><h2>Luctus blandit mi lectus in nascetur</h2>
-							<p>10.30.2016</p>
+			</section>
+			<!-- Four -->
+			<section id="four" class="wrapper post bg-img" data-bg="gray.png"><div class="inner">
+					<article class="box"><header><h2>2024 신입 부원 모집 공고</h2>
+							<p>2024.03.</p>
 						</header><div class="fontSizeSmall" >
-							<p class="some-class">Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
+							<p class="some-class">열정을 다해 달릴 당신을 기다리고 있습니다.</p>
 						</div>
-						<footer><a href="generic.html" class="button alt">Learn More</a>
+						<footer><a href="elements.html" class="button alt">자세히 보기</a>
 						</footer></article></div>
 			</section><!-- Footer -->
 			<!--
