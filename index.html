@@ -23,7 +23,6 @@
 				flex-wrap: wrap; /* 카드가 너무 많아 화면을 벗어날 경우 다음 줄로 넘어가도록 설정 */
 			}
 
-
 			.flex-container-project {
 				display: flex;
 				transition: transform 0.5s ease;
@@ -142,7 +141,6 @@
 						</footer></article></div>
 				<a href="#two" class="more">Learn More</a>
 			</section><!-- Two --><section id="two" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner">
-
 					<article class="box"><header><h2>수상경력</h2><p>12.21.2016</p></header>
 						<div class="flex-container" >
 							<div class="card-awards" onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">				
@@ -174,7 +172,6 @@
 						</footer></article></div>
 				<a href="#three" class="more">Learn More</a>
 			</section><!-- Three --><section id="three" class="wrapper post bg-img" data-bg="ffffff.png"><div class="inner">
-
 					<article class="box"><header><h2>PROJECT</h2>
 							<p>11.11.2016</p>
 						</header>
@@ -234,8 +231,8 @@
 					  
 							<div class="indicator-container"></div>
 					  
-							<button class="arrow-button left" onclick="prevCard()">❮</button>
-							<button class="arrow-button right" onclick="nextCard()">❯</button>
+							<button class="arrow-button left" onclick="prevPage()">❮</button>
+							<button class="arrow-button right" onclick="nextPage()">❯</button>
 						  </div>
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
@@ -293,48 +290,46 @@
 		<script>
 			const container = document.querySelector(".flex-container-project");
 			const indicatorContainer = document.querySelector(".indicator-container");
-			let cardIndex = 0;
-	  
-			function showCards() {
-    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
-    container.style.transform = `translateX(${-cardIndex * cardWidth}px)`;
-
-    // Update indicators
-    const indicators = document.querySelectorAll(".indicator");
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === cardIndex);
-    });
-  }
-
-  function nextCard() {
-    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
-    const visibleCards = Math.floor(container.offsetWidth / cardWidth);
-    cardIndex = Math.min(
-      cardIndex + 1,
-      container.childElementCount - visibleCards
-    );
-    showCards();
-  }
-
-  function prevCard() {
-    cardIndex = Math.max(cardIndex - 1, 0);
-    showCards();
-  }
-
-  // Create indicators
-  const totalCards = document.querySelectorAll(".card").length;
-  for (let i = 0; i < totalCards; i++) {
-    const indicator = document.createElement("div");
-    indicator.classList.add("indicator");
-    indicatorContainer.appendChild(indicator);
-
-    indicator.addEventListener("click", () => {
-      cardIndex = i;
-      showCards();
-    });
-  }
-
-  showCards();
+			let pageIndex = 0;
+		  
+			function showPage() {
+			  const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
+			  container.style.transform = `translateX(${-pageIndex * cardWidth * 3}px)`; // 페이지당 3개의 카드
+		  
+			  // Update indicators
+			  const indicators = document.querySelectorAll(".indicator");
+			  indicators.forEach((indicator, index) => {
+				indicator.classList.toggle("active", index === pageIndex); // 수정된 부분
+			  });
+			}
+		  
+			function nextPage() {
+			  pageIndex = (pageIndex + 1) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
+			  showPage();
+			}
+		  
+			function prevPage() {
+			  pageIndex = (pageIndex - 1 + Math.ceil(document.querySelectorAll(".card").length / 3)) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
+			  showPage();
+			}
+		  
+			// Create indicators
+			const totalCards = document.querySelectorAll(".card").length;
+			const totalPages = Math.ceil(totalCards / 3);
+			for (let i = 0; i < totalPages; i++) {
+			  const indicator = document.createElement("div");
+			  indicator.classList.add("indicator");
+			  indicatorContainer.appendChild(indicator);
+		  
+			  indicator.addEventListener("click", () => {
+				pageIndex = i;
+				showPage();
+			  });
+			}
+		  
+			showPage();
 		  </script>
+		  
+		
 	</body>
 </html>
