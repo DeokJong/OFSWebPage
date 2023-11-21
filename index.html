@@ -13,10 +13,21 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<style>
+			.slider-container {
+        overflow: hidden;
+        position: relative;
+      }
 			.flex-container {
 				display: flex;
 				justify-content: space-around; /* 카드 사이의 간격 조절을 위한 정렬 설정 */
 				flex-wrap: wrap; /* 카드가 너무 많아 화면을 벗어날 경우 다음 줄로 넘어가도록 설정 */
+			}
+
+			.flex-container-project {
+				display: flex;
+				transition: transform 0.5s ease;
+				width: 100%;
+				margin: 0 auto; /* 중앙 정렬을 위해 추가 */
 			}
 
 			.card-awards {
@@ -41,15 +52,68 @@
 				margin-top: 10px;
 			}
 
-			.card-project {
-				width: 30%; /* 가로로 나열되는 카드의 너비 조절 */
-				padding: 20px;
-				margin: 10px;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-				text-align: center;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			}
+			.card {
+        flex: 0 0 auto;
+        width: 30%;
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card:hover {
+        cursor: pointer;
+      }
+
+      .card h3 {
+        font-size: 1.5em;
+      }
+
+      .card p {
+        margin-top: 10px;
+      }
+
+      .indicator-container {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+      }
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #aaa;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .indicator.active {
+        background-color: #333;
+      }
+
+      .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: none;
+      }
+
+      .arrow-button.left {
+        left: 10px;
+      }
+
+      .arrow-button.right {
+        right: 10px;
+      }
 		</style>
 	</head>
 	<body>
@@ -111,32 +175,65 @@
 					<article class="box"><header><h2>PROJECT</h2>
 							<p>11.11.2016</p>
 						</header>
-						<div class="flex-container">
-							<div class="card" onclick="redirectToURL('https://csai.jbnu.ac.kr/csai/29105/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY3NhaSUyRjQ5MjclMkYzMTI0ODklMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2')">				
-								<h3>수상 제목 1</h3>
-								<p>설명이나 날짜 등</p>
+						<div class="slider-container">
+							<div class="flex-container-project">
+							  <!-- 여러 개의 카드 추가 -->
+					  
+							  <div class="card">
+								<h3>CARD 1</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 2</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 3</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 4</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 5</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 6</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 7</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 8</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 9</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 10</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 11</h3>
+								<p>abcdefg</p>
+							  </div>
+							  <div class="card">
+								<h3>CARD 12</h3>
+								<p>abcdefg</p>
+							  </div>
 							</div>
-							<div class="card">
-								<h3>수상 제목 2</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card">
-								<h3>수상 제목 3</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card">
-								<h3>수상 제목 4</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card">
-								<h3>수상 제목 5</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-							<div class="card">
-								<h3>수상 제목 6</h3>
-								<p>설명이나 날짜 등</p>
-							</div>
-						</div>
+					  
+							<div class="indicator-container"></div>
+					  
+							<button class="arrow-button left" onclick="prevCard()">❮</button>
+							<button class="arrow-button right" onclick="nextCard()">❯</button>
+						  </div>
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
 				<a href="#four" class="more">Learn More</a>
@@ -190,5 +287,51 @@
 			 	window.location.href = url;
 			}
 		</script>
+		<script>
+			const container = document.querySelector(".flex-container-project");
+			const indicatorContainer = document.querySelector(".indicator-container");
+			let cardIndex = 0;
+	  
+			function showCards() {
+    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
+    container.style.transform = `translateX(${-cardIndex * cardWidth}px)`;
+
+    // Update indicators
+    const indicators = document.querySelectorAll(".indicator");
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === cardIndex);
+    });
+  }
+
+  function nextCard() {
+    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
+    const visibleCards = Math.floor(container.offsetWidth / cardWidth);
+    cardIndex = Math.min(
+      cardIndex + 1,
+      container.childElementCount - visibleCards
+    );
+    showCards();
+  }
+
+  function prevCard() {
+    cardIndex = Math.max(cardIndex - 1, 0);
+    showCards();
+  }
+
+  // Create indicators
+  const totalCards = document.querySelectorAll(".card").length;
+  for (let i = 0; i < totalCards; i++) {
+    const indicator = document.createElement("div");
+    indicator.classList.add("indicator");
+    indicatorContainer.appendChild(indicator);
+
+    indicator.addEventListener("click", () => {
+      cardIndex = i;
+      showCards();
+    });
+  }
+
+  showCards();
+		  </script>
 	</body>
 </html>
