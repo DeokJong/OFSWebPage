@@ -24,6 +24,12 @@
 	color: #08f;
 	font-size: 30px;
 }
+.darker{
+	color:rgb(108, 108, 108);
+}
+.lighter {
+	font-weight: normal !important;
+}
 .fit img {
 	width: 100%;
 	height: auto;
@@ -1822,7 +1828,7 @@
 
 	.box {
 		margin-top: 2em;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.7);
 		border-radius: 4px;
 		margin-bottom: 2em;
 		overflow: hidden;
