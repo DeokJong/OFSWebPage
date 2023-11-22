@@ -1,11 +1,10 @@
 .card {
   flex: 0 0 auto;
-  margin-top: -20px;
   margin-bottom: 10px;
-  width: 31.5%;
-  height: 100px;
+  width: 80%;
+  height: 85px;
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   background: rgba(0, 0, 0, 0.6);
   border: 3px solid rgba(92, 92, 92, 0.6);
   border-radius: 5px;
@@ -24,12 +23,19 @@
   margin-top: -0.3em;
   font-size: 1.5em;
   margin-bottom: 0.3em;
-  text-align: center; /* 가운데 정렬 추가 */
+  text-align: center;
+  /* 가운데 정렬 추가 */
 }
 
 .card p {
   margin-top: 0;
-display: block;
+  display: block;
+}
+
+.card .content-preview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .indicator-container {
@@ -93,7 +99,8 @@ display: block;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* 모달을 앞으로 가져오기 위해 높은 z-index 값을 설정합니다. */
+  z-index: 1000;
+  /* 모달을 앞으로 가져오기 위해 높은 z-index 값을 설정합니다. */
 }
 
 .modal-content {
@@ -102,21 +109,33 @@ display: block;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: auto;
   max-height: 80vh;
-  position: relative; /* 모달 내부 요소의 위치를 상대 위치로 설정 */
+  position: relative;
+  /* 모달 내부 요소의 위치를 상대 위치로 설정 */
   color: black;
+  font-size: 1.2em;
+  /* 모달 내부 텍스트 크기 조정 */
 }
 
 .modal-content p {
   display: block;
+  font-size: inherit;
+}
+
+.modal-title {
+  color: black;
+  font-style: bold;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 /* 모달창 안의 닫기 버튼 */
 .close {
-  position: absolute; /* 절대 위치로 설정 */
+  position: absolute;
+  /* 절대 위치로 설정 */
   top: 10px;
   right: 10px;
   cursor: pointer;
