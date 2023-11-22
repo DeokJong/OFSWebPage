@@ -5,6 +5,7 @@
 }
 
 .flex-container {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   /* 카드 사이의 간격 조절을 위한 정렬 설정 */
@@ -21,9 +22,9 @@
 }
 
 .card-awards {
-  width: calc(30% - 20px);
-  height: auto;
-  padding: 5px;
+  width: 32%;
+  height: 100%;
+  padding: 10px;
   margin: 10px;
   background: rgba(0, 0, 0, 0.6);
   border: 3px solid rgba(92, 92, 92, 0.6);
@@ -32,13 +33,24 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-awards img {
+.card-awards div {
   width: 100%;
+  height: 250px;
+  text-align: center;
+  border: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 세로로 중앙 정렬 */
+  border-radius: 5px;
+  overflow: hidden
+}
+
+.card-awards img {
+  width: auto;
   height: 100%;
   padding: 0;
   margin: 0;
   border: none;
-  border-radius: 5px;
 }
 
 .card-awards:hover {
@@ -49,7 +61,6 @@
 .card-awards h3 {
   margin-top: 1em;
   font-size: 1.5em;
-  margin-bottom: 0.3em;
 }
 
 .card-awards p {
@@ -61,6 +72,36 @@
     width: 100%;
     /* 화면이 작을 때는 한 줄에 한 카드만 표시 */
   }
+}
+
+.card-project {
+  flex: 0 0 auto;
+  padding: 0;
+  overflow: hidden;
+  /* 넘어가는 내용은 숨기도록 */
+  width: 98%;
+  height: auto;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-project h3 {
+  margin-top: -0.3em;
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+}
+
+.card-project p {
+  margin-top: 0;
+}
+
+.img-project {
+  width: 100%; /* 부모 div의 100%로 가로 길이 조정 */
+  height: 100%; /* 부모 div의 100%로 세로 길이 조정 */
+  object-fit: contain; /* 이미지를 부모 요소에 가득 차게 표시하되, 비율을 유지 */
+  object-position: center; /* 이미지를 중앙에 위치시킴 */
 }
 
 .card {
@@ -83,10 +124,11 @@
   width: 100%;
   height: 80%;
   object-fit: cover;
-    /* 이미지가 카드의 크기를 넘어가면 잘라내어 비율을 유지 */
+  /* 이미지가 카드의 크기를 넘어가면 잘라내어 비율을 유지 */
   object-position: center;
-    /* 이미지를 중앙에 위치시킴 */
+  /* 이미지를 중앙에 위치시킴 */
 }
+
 .card h3 {
   margin-top: -0.3em;
   font-size: 1.5em;
@@ -151,6 +193,7 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   /* 호버시 그림자 변경 */
 }
+
 .arrow-button.left {
   left: -5em;
 }
