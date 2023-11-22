@@ -9,22 +9,25 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/inform.css">
+    <link rel="stylesheet" href="assets/css/inform.css" />
+    <style>
+
+    </style>
   </head>
 
   <body class="subpage">
     <!-- Header == 상단바 -->
     <header id="header" class="alt">
-      <div class="logo"><a href="home.html">JAVICE</a></div>
+      <div class="logo"><a href="index.html">JAVICE</a></div>
       <a href="#menu"><span>Menu</span></a>
     </header>
 
     <!-- Nav == 메뉴버튼 -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="inform.html">Inform</a></li>
-        <li><a href="recruitment.html">Recruit</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generic.html">Inform</a></li>
+        <li><a href="elements.html">Recruit</a></li>
       </ul>
     </nav>
 
@@ -39,7 +42,6 @@
             </div>
             <div class="arrow-button right" onclick="nextSlide()">&#10095;</div>
           </div>
-          <div class="indicator-container" id="indicators"></div>
         </footer>
       </div>
     </section>
@@ -75,86 +77,66 @@
     <script src="assets/js/main.js"></script>
     <!-- 게시판을 동적으로 생성하고 초기 게시글 추가 -->
     <script>
-      // 초기 게시글 데이터
-      const posts = [
-        { title: "첫 번째 게시글", content: "이것은 첫 번째 게시글입니다." },
-        { title: "두 번째 게시글", content: "이것은 두 번째 게시글입니다." },
-        { title: "세 번째 게시글", content: "이것은 세 번째 게시글입니다." },
-        { title: "네 번째 게시글", content: "이것은 네 번째 게시글입니다." },
-        {
-          title: "다섯 번째 게시글",
-          content: "이것은 다섯 번째 게시글입니다.",
-        },
-      ];
-
-      // 게시글을 표시할 게시판 요소 가져오기
-      const board = document.getElementById("board");
-      const indicatorsContainer = document.getElementById("indicators");
-
-      // 초기 게시글 표시
-      posts.forEach((post, index) => {
-        const postElement = document.createElement("div");
-        postElement.classList.add("card", "card-awards");
-        postElement.innerHTML = `
-                <h3>${post.title}</h3>
-                <p>${post.content}</p>`;
-        postElement.onclick = () => openModal(post);
-        board.appendChild(postElement);
-
-        // Indicator 추가
-        const indicator = document.createElement("div");
-        indicator.classList.add("indicator");
-        indicator.onclick = () => goToSlide(index);
-        indicatorsContainer.appendChild(indicator);
-      });
-
-      // 게시글 클릭 시 모달 창 열기
-      function openModal(post) {
-        const modal = document.getElementById("modal");
-        const modalContent = document.getElementById("modalContent");
-
-        modalContent.innerHTML = `<strong>${post.title}</strong><br>${post.content}`;
-        modal.style.display = "block";
-      }
-
-      // Modal 창 닫기
-      function closeModal() {
-        const modal = document.getElementById("modal");
-        modal.style.display = "none";
-      }
-
-      // 슬라이더 관련 변수
-      let currentSlide = 0;
-
-      // 이전 슬라이드로 이동
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + posts.length) % posts.length;
-        updateSlider();
-      }
-
-      // 다음 슬라이드로 이동
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % posts.length;
-        updateSlider();
-      }
-
-      // 특정 슬라이드로 이동
-      function goToSlide(index) {
-        currentSlide = index;
-        updateSlider();
-      }
-
-      // 슬라이더 업데이트 함수
-      function updateSlider() {
-        const cardWidth = board.firstElementChild.offsetWidth;
-        board.style.transform = `translateX(${-currentSlide * cardWidth}px)`;
-
-        // Indicator 업데이트
-        const indicators = document.querySelectorAll(".indicator");
-        indicators.forEach((indicator, index) => {
-          indicator.classList.toggle("active", index === currentSlide);
-        });
-      }
-    </script>
+		// 초기 게시글 데이터
+		const posts = [
+		  { title: "첫 번째 게시글", content: "이것은 첫 번째 게시글입니다.", modalContent: "첫 번째 게시글 내용입니다." },
+		  { title: "두 번째 게시글", content: "이것은 두 번째 게시글입니다.", modalContent: "두 번째 게시글 내용입니다." },
+		  { title: "세 번째 게시글", content: "이것은 세 번째 게시글입니다.", modalContent: "세 번째 게시글 내용입니다." },
+		  { title: "네 번째 게시글", content: "이것은 네 번째 게시글입니다.", modalContent: "네 번째 게시글 내용입니다." },
+		  { title: "다섯 번째 게시글", content: "이것은 다섯 번째 게시글입니다.", modalContent: "다섯 번째 게시글 내용입니다." },
+		];
+	  
+		// 게시글을 표시할 게시판 요소 가져오기
+		const board = document.getElementById("board");
+	  
+		// 초기 게시글 표시
+		posts.forEach((post, index) => {
+		  const postElement = document.createElement("div");
+		  postElement.classList.add("card", "card-awards");
+		  postElement.innerHTML = `
+			<h3>${post.title}</h3>
+			<p>${post.content}</p>
+			<p class="modal-content" style="display: none;">${post.modalContent}</p>`;
+		  postElement.onclick = () => openModal(post);
+		  board.appendChild(postElement);
+		});
+	  
+		// 게시글 클릭 시 모달 창 열기
+		function openModal(post) {
+		  const modal = document.getElementById("modal");
+		  const modalContent = document.getElementById("modalContent");
+	  
+		  modalContent.innerHTML = `<strong>${post.title}</strong><br>${post.content}`;
+		  modalContent.innerHTML += `<br><br><em>${post.modalContent}</em>`;
+		  modal.style.display = "block";
+		}
+	  
+		// Modal 창 닫기
+		function closeModal() {
+		  const modal = document.getElementById("modal");
+		  modal.style.display = "none";
+		}
+	  
+		// 슬라이더 관련 변수
+		let currentSlide = 0;
+	  
+		// 이전 슬라이드로 이동
+		function prevSlide() {
+		  currentSlide = (currentSlide - 1 + posts.length) % posts.length;
+		  updateSlider();
+		}
+	  
+		// 다음 슬라이드로 이동
+		function nextSlide() {
+		  currentSlide = (currentSlide + 1) % posts.length;
+		  updateSlider();
+		}
+	  
+		// 슬라이더 업데이트 함수
+		function updateSlider() {
+		  const cardWidth = board.firstElementChild.offsetWidth;
+		  board.style.transform = `translateX(${-currentSlide * cardWidth}px)`;
+		}
+	  </script>
   </body>
 </html>
