@@ -24,7 +24,7 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="generic.html">Story</a></li>
+			<li><a href="generic.html">Inform</a></li>
 			<li><a href="elements.html">Recruit</a></li>
 		</ul>
 	</nav>
@@ -104,7 +104,7 @@
 				<h2 class="lighter">주요 활동</h2>
 				<p>2023.03. ~</p>
 			</header>
-			<div class="slider-container">
+			<div class="slider-container" id="slider-container-3">
 				<div class="flex-container-project">
 					<!-- 여러 개의 카드 추가 -->
 
@@ -132,12 +132,24 @@
 						<h3 class="lighter">2023.08. <span class="highlight">연세대 외주 작업</span></h3>
 						<img src="images\lppl.png" alt="LPPL">
 					</div>
-					<!-- 추후 추가 카드
-							  <div class="card">
-								<h3>CARD 7</h3>
-								<p>abcdefg</p>
-							  </div>
-							  <div class="card">
+				</div>
+			</div>
+			<div class="indicator-container" id="indicator-container-3"></div>
+			<button class="arrow-button left" onclick="prevPage(3)">❮</button>
+			<button class="arrow-button right" onclick="nextPage(3)">❯</button>
+	</section>
+
+	<!-- Four == 프로젝트 -->
+<section id="four" class="wrapper post bg-img" data-bg="ffffff.png">
+    <div class="inner" style="width: 80%;">
+        <div class="slider-container" id="slider-container-4">
+            <div class="flex-container-project">
+                <!-- 섹션 4의 카드 내용 -->
+				<div class="card">
+					<h3>CARD 7</h3>
+					<p>abcdefg</p>
+			  	</div>
+						  <div class="card">
 								<h3>CARD 8</h3>
 								<p>abcdefg</p>
 							  </div>
@@ -157,21 +169,16 @@
 								<h3>CARD 12</h3>
 								<p>abcdefg</p>
 							  </div>
-							-->
-				</div>
+            </div>
+        </div>
+        <div class="indicator-container" id="indicator-container-4"></div>
+        <button class="arrow-button left" onclick="prevPage(4)">❮</button>
+        <button class="arrow-button right" onclick="nextPage(4)">❯</button>
+    </div>
+</section>
 
-				<div class="indicator-container"></div>
-
-				<button class="arrow-button left" onclick="prevPage()">❮</button>
-				<button class="arrow-button right" onclick="nextPage()">❯</button>
-				<!-- </div>
-					 <footer><a href="generic.html" class="button alt">Learn More</a>
-						</footer> </div>-->
-				<a href="#four" class="more">Learn More</a>
-	</section>
-
-	<!-- Four == 모집 공고-->
-	<section id="four" class="wrapper post bg-img" data-bg="gray.png">
+	<!-- Five == 모집 공고-->
+	<section id="five" class="wrapper post bg-img" data-bg="gray.png">
 		<div class="inner">
 			<article class="box">
 				<header>
@@ -239,49 +246,79 @@
 		}
 	</script>
 	<script>
-		const container = document.querySelector(".flex-container-project");
-		const indicatorContainer = document.querySelector(".indicator-container");
-		let pageIndex = 0;
+		// 섹션 3의 슬라이더
+const container3 = document.querySelector("#slider-container-3 .flex-container-project");
+const indicatorContainer3 = document.querySelector("#indicator-container-3");
+let pageIndex3 = 0;
 
-		function showPage() {
-			const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
-			container.style.transform = `translateX(${-pageIndex * cardWidth * 3}px)`; // 페이지당 3개의 카드
+// 섹션 4의 슬라이더
+const container4 = document.querySelector("#slider-container-4 .flex-container-project");
+const indicatorContainer4 = document.querySelector("#indicator-container-4");
+let pageIndex4 = 0;
 
-			// Update indicators
-			const indicators = document.querySelectorAll(".indicator");
-			indicators.forEach((indicator, index) => {
-				indicator.classList.toggle("active", index === pageIndex); // 수정된 부분
-			});
-		}
+function showPage(container, indicatorContainer, pageIndex) {
+    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Adjusted width
+    container.style.transform = `translateX(${-pageIndex * cardWidth * 3}px)`; // 페이지당 3개의 카드
 
-		function nextPage() {
-			pageIndex = (pageIndex + 1) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
-			showPage();
-		}
+    // 인디케이터 업데이트
+    const indicators = indicatorContainer.querySelectorAll(".indicator");
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === pageIndex);
+    });
+}
 
-		function prevPage() {
-			pageIndex = (pageIndex - 1 + Math.ceil(document.querySelectorAll(".card").length / 3)) % Math.ceil(document.querySelectorAll(".card").length / 3); // 계산 수정
-			showPage();
-		}
+function nextPage(section) {
+    if (section === 3) {
+        pageIndex3 = (pageIndex3 + 1) % Math.ceil(document.querySelectorAll("#three .card").length / 3);
+        showPage(container3, indicatorContainer3, pageIndex3);
+    } else if (section === 4) {
+        pageIndex4 = (pageIndex4 + 1) % Math.ceil(document.querySelectorAll("#four .card").length / 3);
+        showPage(container4, indicatorContainer4, pageIndex4);
+    }
+}
 
-		// Create indicators
-		const totalCards = document.querySelectorAll(".card").length;
-		const totalPages = Math.ceil(totalCards / 3);
-		for (let i = 0; i < totalPages; i++) {
-			const indicator = document.createElement("div");
-			indicator.classList.add("indicator");
-			indicatorContainer.appendChild(indicator);
+function prevPage(section) {
+    if (section === 3) {
+        pageIndex3 = (pageIndex3 - 1 + Math.ceil(document.querySelectorAll("#three .card").length / 3)) % Math.ceil(document.querySelectorAll("#three .card").length / 3);
+        showPage(container3, indicatorContainer3, pageIndex3);
+    } else if (section === 4) {
+        pageIndex4 = (pageIndex4 - 1 + Math.ceil(document.querySelectorAll("#four .card").length / 3)) % Math.ceil(document.querySelectorAll("#four .card").length / 3);
+        showPage(container4, indicatorContainer4, pageIndex4);
+    }
+}
 
-			indicator.addEventListener("click", () => {
-				pageIndex = i;
-				showPage();
-			});
-		}
+// Create indicators for section 3
+const totalCards3 = document.querySelectorAll("#three .card").length;
+const totalPages3 = Math.ceil(totalCards3 / 3);
+for (let i = 0; i < totalPages3; i++) {
+    const indicator = document.createElement("div");
+    indicator.classList.add("indicator");
+    indicatorContainer3.appendChild(indicator);
 
-		showPage();
+    indicator.addEventListener("click", () => {
+        pageIndex3 = i;
+        showPage(container3, indicatorContainer3, pageIndex3);
+    });
+}
+
+// Create indicators for section 4
+const totalCards4 = document.querySelectorAll("#four .card").length;
+const totalPages4 = Math.ceil(totalCards4 / 3);
+for (let i = 0; i < totalPages4; i++) {
+    const indicator = document.createElement("div");
+    indicator.classList.add("indicator");
+    indicatorContainer4.appendChild(indicator);
+
+    indicator.addEventListener("click", () => {
+        pageIndex4 = i;
+        showPage(container4, indicatorContainer4, pageIndex4);
+    });
+}
+
+showPage(container3, indicatorContainer3, pageIndex3);
+showPage(container4, indicatorContainer4, pageIndex4);
+
 	</script>
-	
-
 
 </body>
 
