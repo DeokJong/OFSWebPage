@@ -3345,15 +3345,13 @@
 		line-height: 3.25em;
 		position: fixed;
 		text-align: right;
-		top: 1em;
 		width: 100%;
 		z-index: 10001;
 		padding: 0 1.5em;
 	}
 
 		#header.alt { /* 헤더 색깔 */
-			top: 5;
-			background: rgb(105, 105, 105, 0);
+			background: rgba(0, 0, 0, 100);
 		}
 
 		#header .logo {
