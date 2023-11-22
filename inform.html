@@ -1,157 +1,160 @@
-<!DOCTYPE HTML>
-<html>
-<!--TEST Line-->
-<head>
-	<title>JAVICE 자비스</title>
-	<meta charset="utf-8">
-	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<style>
-		/* 추가한 스타일 */
-		.card-posts {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 10px;
-			flex-direction: row; /* 세로로 정렬 */
-			width: 100%;
-			height: 50px;
-		}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JAVICE 자비스</title>
+    <meta charset="utf-8" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/inform.css">
+  </head>
 
-		.post {
-			cursor: pointer;
-		}
+  <body class="subpage">
+    <!-- Header == 상단바 -->
+    <header id="header" class="alt">
+      <div class="logo"><a href="index.html">JAVICE</a></div>
+      <a href="#menu"><span>Menu</span></a>
+    </header>
 
-		.post-content {
-			display: none;
-			font-size: 0.8em;
-		}
+    <!-- Nav == 메뉴버튼 -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generic.html">Inform</a></li>
+        <li><a href="elements.html">Recruit</a></li>
+      </ul>
+    </nav>
 
-		.con {
-			height: 500px;
-		}
-	</style>
-</head>
+    <section id="post" class="wrapper bg-img" data-bg="navy.png">
+      <div class="inner">
+        <!--게시판 구현-->
+        <footer>
+          <div class="slider-container">
+            <div class="arrow-button left" onclick="prevSlide()">&#10094;</div>
+            <div class="flex-container" id="board">
+              <!-- 여기에 각 게시물 카드를 동적으로 추가하게 됩니다. -->
+            </div>
+            <div class="arrow-button right" onclick="nextSlide()">&#10095;</div>
+          </div>
+          <div class="indicator-container" id="indicators"></div>
+        </footer>
+      </div>
+    </section>
 
-<body class="subpage">
+    <div class="fontSizeCopyright copyright">
+      <img src="images\finalLogoSmall.png" alt="자비스 로고" /><br />
+      <a style="text-decoration: none">JA</a><b>va ser</b
+      ><a style="text-decoration: none">VICE</a><br />
+      <b>Copyright @</b
+      ><a
+        href="https://csai.jbnu.ac.kr/csai/29028/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGY3NhaSUyRjc5MSUyRjY4MjYlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D"
+        >JAVICE</a
+      >
+      <span>문의: javice.contact@gmail.com</span><br />
+    </div>
 
-	<!-- Header == 상단바 -->
-	<header id="header" class="alt">
-		<div class="logo"><a href="home.html">JAVICE</a></div>
-		<a href="#menu"><span>Menu</span></a>
-	</header>
-	
-	<!-- Nav == 메뉴버튼 -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="home.html">Home</a></li>
-			<li><a href="inform.html">Inform</a></li>
-			<li><a href="recruitment.html">Recruit</a></li>
-		</ul>
-	</nav>
+    <!-- Modal 창 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalContent" class="post-content">
+          <!-- 내용이 표시될 곳 -->
+        </div>
+      </div>
+    </div>
 
-	
-	<section id="post" class="wrapper bg-img" data-bg="navy.png">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Nibh non lobortis mus nibh</h2>
-					<p>01.01.2017</p>
-				</header>
-				<div class="con">
-					<!-- 게시판 구현 -->
-					<div id="board" class="board-container card-posts">
-						<!-- 게시글 목록이 표시될 영역 -->
-					</div>
-				</div>
-				<footer>
-					<ul class="actions">
-						<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a>
-						</li>
-						<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a>
-						</li>
-					</ul>
-				</footer>
-			</article>
-		</div>
-	</section><!-- Footer -->
-	<!--
-			<footer id="footer"><div class="inner">
-										<h2>Contact</h2>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- 게시판을 동적으로 생성하고 초기 게시글 추가 -->
+    <script>
+      // 초기 게시글 데이터
+      const posts = [
+        { title: "첫 번째 게시글", content: "이것은 첫 번째 게시글입니다." },
+        { title: "두 번째 게시글", content: "이것은 두 번째 게시글입니다." },
+        { title: "세 번째 게시글", content: "이것은 세 번째 게시글입니다." },
+        { title: "네 번째 게시글", content: "이것은 네 번째 게시글입니다." },
+        {
+          title: "다섯 번째 게시글",
+          content: "이것은 다섯 번째 게시글입니다.",
+        },
+      ];
 
-					<form action="#" method="post">
-						<div class="field half first">
-							<label for="name" class="fontSizeBig">이름</label>
-							<input name="name" id="name" type="text" placeholder="Name" class="fontSizeSmall">
-						</div>
-						<div class="field half">
-							<label for="email" class="fontSizeBig">이메일</label>
-							<input name="email" id="email" type="email" placeholder="Email" class="fontSizeSmall">
-						</div>
-						<div class="field">
-							<label for="message" class="fontSizeBig">연락처</label>
-							<textarea name="message" id="message" rows="6" placeholder="Message" class="fontSizeSmall"></textarea>
-						</div>
-						<ul class="actions">
-							<li><input value="보내기 Send Message" class="button alt fontSizeSmall" type="submit"></li>
-						</ul>
-					</form>
+      // 게시글을 표시할 게시판 요소 가져오기
+      const board = document.getElementById("board");
+      const indicatorsContainer = document.getElementById("indicators");
 
-					<ul class="icons"><li><a href="#" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul></div>
-</footer>
-							-->
-	<div class="fontSizeCopyright copyright">
-		<img src="images\finalLogoSmall.png" alt="자비스 로고"><br>
-		<a style="text-decoration: none;">JA</a><b>va ser</b><a style="text-decoration: none;">VICE</a><br>
-		<b>Copyright @</b><a
-			href="https://csai.jbnu.ac.kr/csai/29028/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGY3NhaSUyRjc5MSUyRjY4MjYlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D">JAVICE</a>
-		<span>문의: javice.contact@gmail.com</span><br>
-	</div>
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<!-- 게시판을 동적으로 생성하고 초기 게시글 추가 -->
-	<script>
-		// 초기 게시글 데이터
-		const posts = [
-			{ title: "첫 번째 게시글", content: "이것은 첫 번째 게시글입니다." },
-			{ title: "두 번째 게시글", content: "이것은 두 번째 게시글입니다." },
-		];
+      // 초기 게시글 표시
+      posts.forEach((post, index) => {
+        const postElement = document.createElement("div");
+        postElement.classList.add("card", "card-awards");
+        postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>`;
+        postElement.onclick = () => openModal(post);
+        board.appendChild(postElement);
 
-		// 게시글을 표시할 게시판 요소 가져오기
-		const board = document.getElementById("board");
+        // Indicator 추가
+        const indicator = document.createElement("div");
+        indicator.classList.add("indicator");
+        indicator.onclick = () => goToSlide(index);
+        indicatorsContainer.appendChild(indicator);
+      });
 
-		// 초기 게시글 표시
-		posts.forEach((post) => {
-			const postElement = document.createElement("div");
-			postElement.classList.add("post", "card-posts");
-			postElement.innerHTML = `<strong>${post.title}</strong>`;
-			postElement.onclick = () => openModal(post);
-			board.appendChild(postElement);
-		});
+      // 게시글 클릭 시 모달 창 열기
+      function openModal(post) {
+        const modal = document.getElementById("modal");
+        const modalContent = document.getElementById("modalContent");
 
-		// 게시글 클릭 시 모달 창 열기
-		function openModal(post) {
-			const modal = document.getElementById("modal");
-			const modalContent = document.getElementById("modal-content");
+        modalContent.innerHTML = `<strong>${post.title}</strong><br>${post.content}`;
+        modal.style.display = "block";
+      }
 
-			modalContent.innerHTML = `<strong>${post.title}</strong><br>${post.content}`;
-			modal.style.display = "block";
-		}
+      // Modal 창 닫기
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
 
-		// Modal 창 닫기
-		function closeModal() {
-			const modal = document.getElementById("modal");
-			modal.style.display = "none";
-		}
-	</script>
-</body>
+      // 슬라이더 관련 변수
+      let currentSlide = 0;
 
+      // 이전 슬라이드로 이동
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + posts.length) % posts.length;
+        updateSlider();
+      }
+
+      // 다음 슬라이드로 이동
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % posts.length;
+        updateSlider();
+      }
+
+      // 특정 슬라이드로 이동
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+      }
+
+      // 슬라이더 업데이트 함수
+      function updateSlider() {
+        const cardWidth = board.firstElementChild.offsetWidth;
+        board.style.transform = `translateX(${-currentSlide * cardWidth}px)`;
+
+        // Indicator 업데이트
+        const indicators = document.querySelectorAll(".indicator");
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === currentSlide);
+        });
+      }
+    </script>
+  </body>
 </html>
