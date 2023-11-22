@@ -4422,21 +4422,55 @@
 
 .copyright {
 	color: rgba(255, 255, 255, 0.5);
-	font-size: 0.8em;
-	margin: 2em 0 2em 0;
+	margin: 0em 3em 2em 2em;
 	padding: 0;
-	text-align: center;
 }
-.copyright a{
-	text-decoration: none;
+/* copyright 요소 내부의 a 태그에 대한 스타일 */
+.copyright a {
+	float: left;
+	display: inline-block;
+}
+
+.copyright b{
+	color: rgba(255, 255, 255, 0.5);
+	font-weight: normal;
+	float: left;
+	display: inline-block;
+}
+
+.copyright img{
+	height: 100px;
+	width: 100px;
+	align-self: left;
+	margin-bottom: 10px;
+}
+
+/* copyright 요소 내부의 span 태그에 대한 스타일 */
+.copyright span {
+	float: right;
+	display: inline-block;
 }
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.8em;
-			margin: 0 0 2em 0;
-			padding: 0;
-			text-align: center;
-		}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    margin: 0 0 2em 0;
+    padding: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#footer .copyright a {
+    text-decoration: none;
+    text-align: left;
+    margin-right: auto; /* Pushes the element to the left */
+}
+
+#footer .copyright span {
+    text-align: right;
+    margin-left: auto; /* Pushes the element to the right */
+}
 
 		#footer .icon.round {
 			display: block;
@@ -4457,6 +4491,7 @@
 		@media screen and (max-width: 736px) {
 
 			#footer {
+				
 				padding: 3em 0 1em 0;
 			}
 
